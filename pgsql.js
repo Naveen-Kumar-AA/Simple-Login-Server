@@ -6,29 +6,26 @@ dotenv.config()
 
 
 async function connectDB() {
-    try {
-        // pool = new Pool({
-        //     user: process.env.PGUSER,
-        //     host: process.env.PGHOST,
-        //     database: process.env.PGDATABASE,
-        //     password: process.env.PGPASSWORD,
-        //     port: process.env.PGPORT,
-        // });
-        const connectString = process.env.CONNECTSTRING;
-        const pool = new Pool({
-          connectionString : connectString,
-          ssl : true
-        })
+    // pool = new Pool({
+    //     user: process.env.PGUSER,
+    //     host: process.env.PGHOST,
+    //     database: process.env.PGDATABASE,
+    //     password: process.env.PGPASSWORD,
+    //     port: process.env.PGPORT,
+    // });
+    const connectString = process.env.CONNECTSTRING;
+    const pool = new Pool({
+      connectionString : connectString,
+      ssl : true
+    })
 
-        await pool.connect()
+    await pool.connect()
 
-        console.log("Connection success!")
+    console.log("Connection success!")
 
-        return pool;
+    return pool;
 
-    } catch (error) {
-        console.log(error)
-    }
+
   }  
 
 
