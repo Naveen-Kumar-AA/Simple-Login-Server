@@ -29,8 +29,7 @@ async function connectDB() {
     } catch (error) {
         console.log(error)
     }
-  }
-  
+  }  
 
 
 async function createTableIfNotExists(connection,tableName) {
