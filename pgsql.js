@@ -13,6 +13,7 @@ async function connectDB() {
     //     password: process.env.PGPASSWORD,
     //     port: process.env.PGPORT,
     // });
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
     const connectString = process.env.CONNECTSTRING;
     const pool = new Pool({
       connectionString : connectString,
